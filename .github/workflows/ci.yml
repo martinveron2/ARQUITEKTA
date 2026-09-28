@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  repository-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate required project files
+        run: |
+          test -f README.md
+          test -f AGENTS.md
+          test -f ROADMAP.md
+          test -f PROJECT_STATUS.md
+          test -f ARCHITECTURE.md
+          test -f CHANGELOG.md
+          test -f LICENSE
+          test -f docs/USER_MANUAL.md
+          test -f docs/OPERATIONS_MANUAL.md
+          test -f docs/DEVELOPER_GUIDE.md
+          test -f docs/SYSTEM_STATES.md
+          test -f docs/SECURITY_MODEL.md
