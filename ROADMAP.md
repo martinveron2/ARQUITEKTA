@@ -25,11 +25,19 @@
 - [ ] correcciones automáticas revisables
 - [ ] evidencia por criterio
 
-## Fase 3 — CORE UI/UX — Issue #4
+## Fase 3 — DESIGN ENGINE + CORE UI/UX — Issue #4
+- [ ] entrevista visual y captura de preferencias
+- [ ] intake de referencias, screenshots, links, logos y mockups
+- [ ] generación de propuestas visuales
+- [ ] aprobación humana de mockup
+- [ ] Design Profile versionado
+- [ ] modos Clone style / Family / Fresh / Reference mix
+- [ ] App Family
 - [ ] registry de componentes
 - [ ] themes/tokens
 - [ ] presets mobile/web
 - [ ] screenshots automáticos
+- [ ] adapters reemplazables para motores de diseño
 
 ## Fase 4 — ORCHESTRUM — Issue #5
 - [ ] adapter estable
