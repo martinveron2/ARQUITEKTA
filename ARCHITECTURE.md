@@ -25,3 +25,17 @@ Transversal: Security · Observability · Logging · Config · Testing · Ledger
 
 ## Fronteras
 La UI nunca conoce proveedores específicos. El core nunca depende directamente de GitHub, Vercel, AWS, GCP, Azure ni un proveedor de IA. Todo proveedor se implementa como adapter.
+
+
+## Separación CORE ↔ DESIGN
+
+ARQUITEKTA mantiene una frontera explícita entre arquitectura e identidad visual.
+
+- **CORE** conserva la arquitectura maestra MVA y sus garantías técnicas.
+- **DESIGN** transforma preferencias, referencias y mockups aprobados en un Design Profile reutilizable.
+- El diseño puede cambiar sin reescribir el core.
+- Un proveedor, framework visual o agente puede reemplazarse mediante adapters sin perder el Design Profile.
+
+Directiva completa: `docs/DESIGN_ENGINE.md`.
+
+**Regla:** la arquitectura es estándar; la identidad es del usuario.
