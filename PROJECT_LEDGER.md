@@ -19,3 +19,21 @@
 **Tipo:** APPROVAL
 **Estado:** APPROVED
 **Decisión:** imagen conceptual ARQUITEKTA aprobada para README y documentación.
+
+
+## 2026-09-28 — DESIGN OWNERSHIP
+**Tipo:** DECISION
+**Estado:** ACTIVE
+**Decisión:** la arquitectura maestra MVA permanece fija como estándar técnico, mientras la identidad visual pertenece al usuario y se implementa mediante un módulo DESIGN desacoplado.
+
+## 2026-09-28 — DESIGN PROFILE
+**Tipo:** DECISION
+**Estado:** ACTIVE
+**Decisión:** ARQUITEKTA podrá entrevistar al usuario, recibir referencias o mockups, proponer diseños y, tras aprobación humana, generar un Design Profile versionado y reutilizable entre futuras apps o familias de apps.
+
+## 2026-09-28 — DESIGN ENGINES
+**Tipo:** ARCHITECTURE
+**Estado:** ACTIVE
+**Decisión:** Reference Engine, Design Engine, Brand Engine, Layout Engine, Component Engine y Style Memory deben ser enchufables mediante adapters. Ningún motor de diseño podrá acoplar la arquitectura a un proveedor único.
+
+**Regla de producto:** “La arquitectura es estándar. La identidad es tuya.”
