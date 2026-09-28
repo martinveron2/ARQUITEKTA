@@ -31,6 +31,14 @@ GitHub
 
 **GitHub es la fuente persistente de verdad.**
 
+## Arquitectura + identidad
+
+**La arquitectura es estándar. La identidad es tuya.**
+
+ARQUITEKTA separa la arquitectura maestra MVA del lenguaje visual de cada producto. El módulo **DESIGN** puede partir de una entrevista, referencias, capturas o mockups; tras aprobación humana genera un **Design Profile** reutilizable para una app o una familia completa de apps.
+
+Ver `docs/DESIGN_ENGINE.md`.
+
 ## Dos motores del MVP
 ### CREATE
 Idea → Especificación → Arquitectura → Módulos → Repo → Código → Tests → Preview → Auditoría → Aprobación → Producción.
@@ -39,7 +47,7 @@ Idea → Especificación → Arquitectura → Módulos → Repo → Código → 
 Repo existente → análisis MVA → Cumple / Faltante / Desactualizado / Riesgo → propuesta de corrección → revisión → aplicación → evidencia.
 
 ## Módulos
-Core UI/UX · ORCHESTRUM · Auth · Database · API · AI · Jobs/Workers · Payments · Maps · Notifications · Storage · Analytics · Deployment · Portability · Ledger · Backup/Restore.
+DESIGN Engine · Design Profile · Reference Engine · Brand Engine · Layout Engine · Component Engine · Core UI/UX · ORCHESTRUM · Auth · Database · API · AI · Jobs/Workers · Payments · Maps · Notifications · Storage · Analytics · Deployment · Portability · Ledger · Backup/Restore.
 
 ## Gestión del proyecto
 
