@@ -157,3 +157,30 @@ IMPLEMENTED
 + COMMITTED/PUSHED
 + CI GREEN
 ```
+
+
+## Closure protocol result
+
+Applied on 2026-09-28.
+
+### HECHO
+- durable runtime code committed and pushed on `feat/backend-milestone-0a`
+- PostgreSQL 16 local integration suite verified: **14 passed in 1.63s**
+- Alembic migration verified from clean schema
+- M0A state synchronized in ORCHESTRUM PROJECT_LEDGER / PROJECT_STATUS / ROADMAP / ARCHITECTURE / CHANGELOG
+- draft PR #12 opened
+- issue #2 updated with checkpoint evidence
+- unrelated local files preserved and excluded from milestone commit
+
+### PENDIENTE
+- durable FastAPI path
+- persisted SSE / Last-Event-ID
+- E2E vertical slice
+- verify GitHub Actions green
+- only after that: mark M0A DONE
+
+### ESTADO GIT
+Milestone work is committed/pushed on the feature branch. The EC2 working tree still contains unrelated frontend/common-module changes generated or owned outside this backend slice; they were intentionally not reset, deleted or included.
+
+### PRÓXIMO PASO
+Resume branch `feat/backend-milestone-0a` → wire durable API path → SSE → E2E → full tests → CI → M0A DONE.
