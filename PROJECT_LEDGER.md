@@ -81,3 +81,19 @@
 **Próximo checkpoint:** cerrar Milestone 0A con SSE + E2E + suite completa + commit/push + CI verde.
 
 **Detalle:** `docs/ledger/apps/2026/ORCHESTRUM-M0A-2026-09-28.md`
+
+
+## 2026-09-28 — APP BOOK / ORCHESTRUM — PROTOCOLO DE CIERRE M0A
+**Tipo:** CLOSURE CHECKPOINT  
+**Estado:** IN PROGRESS / SAFE TO RESUME  
+**Repo:** `martinveron2/ORCHESTRUM`  
+**Rama:** `feat/backend-milestone-0a`  
+**Draft PR:** #12
+
+**Hecho:** durable PostgreSQL runtime foundation, Alembic, claim/reclaim, fencing, idempotencia, budget reservation, reaper, FakeExecutor y tests de concurrencia.
+
+**Evidencia:** suite local **14 passed in 1.63s**; Alembic verificado desde schema PostgreSQL 16 limpio; draft PR #12 creado; issue #2 actualizado.
+
+**Pendiente:** FastAPI durable path, SSE + Last-Event-ID, E2E POST→worker→event→SSE, CI verde verificado.
+
+**Regla de cierre:** M0A NO está DONE. Retomar exactamente por SSE/API durable y cerrar E2E antes de agregar DAG, planner, Redis o proveedores reales.
