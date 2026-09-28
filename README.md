@@ -41,6 +41,14 @@ Repo existente → análisis MVA → Cumple / Faltante / Desactualizado / Riesgo
 ## Módulos
 Core UI/UX · ORCHESTRUM · Auth · Database · API · AI · Jobs/Workers · Payments · Maps · Notifications · Storage · Analytics · Deployment · Portability · Ledger · Backup/Restore.
 
+## Gestión del proyecto
+
+- GitHub Project: **ARQUITEKTA — PRODUCT & ENGINEERING ROADMAP (#9)**
+- Roadmap versionado: `ROADMAP.md`
+- Estado vivo: `PROJECT_STATUS.md`
+- Ledger: `PROJECT_LEDGER.md`
+- Issues #1–#7 representan las fases 0–6 del roadmap.
+
 ## Estado
 Ver `PROJECT_STATUS.md` y `ROADMAP.md`.
 
