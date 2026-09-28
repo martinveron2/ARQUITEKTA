@@ -1,11 +1,9 @@
 # SYSTEM STATES
 
-Definir estados oficiales del producto.
+## Proyecto
+DRAFT → DESIGNING → BUILDING → AUDITING → READY_FOR_APPROVAL → APPROVED → DEPLOYING → LIVE
 
-Para cada estado documentar:
-- definición
-- condición de entrada
-- condición de salida
-- comportamiento de UI
-- acciones permitidas
-- acciones prohibidas
+Estados de excepción: BLOCKED · NEEDS_USER · FAILED · ROLLED_BACK.
+
+## Regla
+No saltar de BUILDING a LIVE. Producción requiere auditoría y aprobación explícita.

@@ -1,48 +1,19 @@
 # PROJECT STATUS
 
-Última actualización: pendiente
-Versión: 0.0.0
-Branch principal: main
-Estado general: BOOTSTRAP
+Estado: 🟡 EN DESARROLLO — SEMILLERO
+Versión: 0.1.0
+Fecha base: 2026-09-28
 
-## Producto
-Pendiente de definición.
-
-## Frontend
-No iniciado.
-
-## Backend
-No iniciado.
-
-## Datos
-No definido.
-
-## Integraciones
-No definidas.
-
-## Deploy
-No desplegado.
-
-## Portabilidad
-Baseline portable pendiente. Deben definirse install / doctor / backup / restore / verify / migrate / rollback antes de considerar el proyecto listo para producción.
-
-## Testing
-No iniciado.
-
-## Observabilidad
-No iniciada.
-
-## Problemas conocidos
-Ninguno registrado.
-
-## Bloqueos
-Ninguno registrado.
-
-## Próximo objetivo
-Completar definición inicial y generar primer preview navegable.
-
-## Última prueba realizada
-N/A
-
-## Resultado
-N/A
+| Área | Estado | Evidencia |
+|---|---|---|
+| Principio 0 | ✅ | AGENTS.md / ARCHITECTURE.md |
+| Frontend mobile-first | 🟡 | src/app + src/components |
+| Desktop responsive | 🟡 | CSS responsive |
+| CREATE engine | ⬜ | Roadmap Fase 1 |
+| AUDIT engine | 🟡 | scripts/audit-mva.mjs |
+| CORE UI/UX | ⬜ | Adapter planificado |
+| ORCHESTRUM | ⬜ | Adapter planificado |
+| GitHub persistence | ✅ | repo martinveron2/ARQUITEKTA + GitHub Project #9 |
+| Portabilidad | 🟡 | infraestructura base creada |
+| Testing | 🟡 | smoke test inicial |
+| Producción | ⛔ | no aprobada |

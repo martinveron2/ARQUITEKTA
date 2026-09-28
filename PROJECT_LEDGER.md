@@ -1,44 +1,21 @@
 # PROJECT LEDGER
 
-> Memoria operativa viva según `MVA-PROJECT-DESIGN / PROJECT_LEDGER_STANDARD.md`.
+## 2026-09-28 — FOUNDATION
+**Tipo:** DECISION
+**Estado:** ACTIVE
+**Decisión:** el proyecto se llama ARQUITEKTA y será la fábrica/gobierno de aplicaciones basadas en MVA-PROJECT-DESIGN.
 
-## Qué queremos lograr
-Definir el objetivo del proyecto en lenguaje humano.
+## 2026-09-28 — PRODUCT PRINCIPLE
+**Tipo:** DECISION
+**Estado:** ACTIVE
+**Decisión:** mobile-first, con experiencia desktop responsive secundaria.
 
-## Estado
-BOOTSTRAP.
+## 2026-09-28 — ARCHITECTURE
+**Tipo:** DECISION
+**Estado:** ACTIVE
+**Decisión:** ARQUITEKTA gobierna; MVA-PROJECT-DESIGN controla estándar; MVA-PROJECT-TEMPLATE genera base; CORE UI/UX provee componentes; ORCHESTRUM orquesta agentes; GitHub conserva verdad persistente.
 
-## Qué funciona
-Nada verificado todavía.
-
-## Qué falta
-- definir producto y usuario;
-- fijar contratos modulares;
-- completar arquitectura;
-- definir baseline portable;
-- crear primer preview navegable;
-- verificar flujo crítico.
-
-## Problema principal
-Ninguno registrado.
-
-## Qué estamos haciendo
-Bootstrap inicial desde `MVA-PROJECT-TEMPLATE`.
-
-## Próxima meta
-Primer resultado observable y verificable.
-
-## Qué necesito del usuario
-Definir objetivo y alcance inicial si todavía no existen.
-
-## Registro activo
-
-| ID | Tipo | Estado | Resumen |
-|---|---|---|---|
-| G-001 | Goal | CAPTURED | Objetivo principal del producto |
-| CP-001 | Checkpoint | PLANNED | Primer preview navegable |
-| REQ-001 | Requirement | VERIFIED | Arquitectura modular, escalable y portable desde el nacimiento |
-
-## Definition of Done
-
-Una entrada sólo pasa a DONE cuando está **IMPLEMENTADA + PROBADA + DOCUMENTADA + VERIFICADA**.
+## 2026-09-28 — VISUAL
+**Tipo:** APPROVAL
+**Estado:** APPROVED
+**Decisión:** imagen conceptual ARQUITEKTA aprobada para README y documentación.

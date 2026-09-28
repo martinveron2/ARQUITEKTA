@@ -1,59 +1,27 @@
 # ARCHITECTURE
 
-## PRINCIPIO 0 — MODULAR, ESCALABLE Y PORTABLE DESDE EL NACIMIENTO
+## Principio 0
+MODULAR · ESCALABLE · REEMPLAZABLE · OBSERVABLE · TESTEABLE · PORTABLE · DOCUMENTADO · AUDITABLE
 
-**REGLA OBLIGATORIA Y PRIORITARIA:** todo proyecto, app, servicio, módulo o nueva funcionalidad del ecosistema MVA debe diseñarse **MODULAR, ESCALABLE Y PORTABLE desde el primer día**.
+## Flujo maestro
+ARQUITEKTA → MVA-PROJECT-DESIGN → MVA-PROJECT-TEMPLATE → CORE UI/UX → ORCHESTRUM → AGENTES IA → GITHUB
 
-Esto no es una mejora futura ni una optimización opcional. Es una condición de diseño previa a implementar.
+GitHub es la fuente persistente de verdad.
 
-- cada responsabilidad importante debe poder aislarse en módulos claros;
-- los módulos deben tener contratos/interfaces definidos y bajo acoplamiento;
-- frontend, backend, core, datos, infraestructura e integraciones deben poder evolucionar sin rehacer todo el sistema;
-- proveedores externos deben entrar mediante adapters/connectors reemplazables;
-- agregar un nuevo mercado, proveedor, portal, IA, broker, cloud, worker o interfaz no debe obligar a reescribir el core;
-- escalar significa permitir crecimiento por necesidad medida, sin introducir complejidad prematura;
-- toda excepción debe quedar documentada y justificada.
+## Capas
+UI/PWA → API/Gateway → Application/Orchestration → Domain/Core → Workers/Engines → Adapters/Connectors → Data/Storage
 
-**Regla de aceptación:** si una solución resuelve el problema inmediato pero bloquea la modularidad o el crecimiento razonable del proyecto, no cumple el estándar MVA.
+Transversal: Security · Observability · Logging · Config · Testing · Ledger · Portability.
 
-## Principios
-MODULAR · ESCALABLE · REEMPLAZABLE · OBSERVABLE · TESTEABLE · PORTABLE · DOCUMENTADO
+## Módulos iniciales
+- project-catalog: proyectos y estados
+- app-builder: wizard de creación
+- module-catalog: catálogo enchufable
+- mva-audit: cumplimiento y correcciones
+- orchestrum-adapter: selección/orquestación de agentes
+- github-adapter: persistencia de repositorios y evidencia
+- portability: export/restore/cutover/rollback
+- ledger: memoria operativa del proyecto
 
-## System Overview
-
-```mermaid
-flowchart TD
-    U[Users] --> F[Frontend / PWA]
-    F --> G[API / Gateway]
-    G --> A[Application]
-    A --> C[Core]
-    C --> W[Workers]
-    W --> X[Adapters / Connectors]
-    X --> E[External Services]
-    C --> D[(Data)]
-```
-
-## Modules
-Documentar cada módulo con responsabilidad, inputs, outputs, dependencias, interfaz y estado.
-
-## Portabilidad
-
-La infraestructura debe ser provider-neutral. AWS, GCP, Azure, VPS, Vercel, Cloudflare o local son destinos/adapters, no dependencias existenciales del core.
-
-Todo proyecto debe documentar:
-- install;
-- doctor;
-- backup/export;
-- restore;
-- verify;
-- migrate/cutover;
-- rollback.
-
-## Seguridad
-Ver `docs/SECURITY_MODEL.md`.
-
-## Observabilidad
-Definir logs, métricas, health checks y alertas según madurez.
-
-## Escalabilidad
-Escalar sólo por necesidad medida. Evitar complejidad prematura.
+## Fronteras
+La UI nunca conoce proveedores específicos. El core nunca depende directamente de GitHub, Vercel, AWS, GCP, Azure ni un proveedor de IA. Todo proveedor se implementa como adapter.

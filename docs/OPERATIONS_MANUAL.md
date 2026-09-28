@@ -1,26 +1,7 @@
 # OPERATIONS MANUAL
 
-## Start
-Pendiente.
-## Stop
-Pendiente.
-## Restart
-Pendiente.
-## Health checks
-Pendiente.
-## Logs
-Pendiente.
-## Workers / Queues
-Pendiente.
-## Database
-Pendiente.
-## Integrations
-Pendiente.
-## Diagnostics
-Pendiente.
-## Recovery
-Pendiente.
-## Rollback
-Pendiente.
-## Deployment verification
-Pendiente.
+- nunca declarar producción sin health check real
+- guardar secretos fuera del repositorio
+- conservar rollback antes de cutover
+- verificar destino antes de retirar origen
+- documentar incidentes y decisiones en PROJECT_LEDGER.md

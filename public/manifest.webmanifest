@@ -1,0 +1,10 @@
+{
+  "name": "ARQUITEKTA",
+  "short_name": "ARQUITEKTA",
+  "description": "La base de diseño de tu futura app",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f7fb",
+  "theme_color": "#5B35F5",
+  "icons": []
+}
