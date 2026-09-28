@@ -184,3 +184,18 @@ Milestone work is committed/pushed on the feature branch. The EC2 working tree s
 
 ### PRÓXIMO PASO
 Resume branch `feat/backend-milestone-0a` → wire durable API path → SSE → E2E → full tests → CI → M0A DONE.
+
+
+### CI closure check
+
+GitHub Actions run #144 was checked after the closure push and is **not green**.
+
+Observed:
+- web: failure
+- Python 3.11: cancelled
+- Python 3.12: failure
+- job metadata returned no executed steps and runner_id = 0
+
+The exact GitHub-side cause was not resolved during closure. Local PostgreSQL verification remains: **14 passed in 1.63s**. M0A stays IN PROGRESS.
+
+Next session must inspect/re-run CI before any DONE claim.
