@@ -97,3 +97,14 @@
 **Pendiente:** FastAPI durable path, SSE + Last-Event-ID, E2E POST→worker→event→SSE, CI verde verificado.
 
 **Regla de cierre:** M0A NO está DONE. Retomar exactamente por SSE/API durable y cerrar E2E antes de agregar DAG, planner, Redis o proveedores reales.
+
+
+## 2026-09-28 — APP BOOK / ORCHESTRUM — CI #144 NO VERDE
+**Tipo:** CLOSURE PROBLEM  
+**Estado:** OPEN
+
+Tras el cierre de M0A, GitHub Actions run #144 terminó en FAILURE. Los jobs reportados no mostraron pasos ejecutados y runner_id = 0; Python 3.11 quedó cancelled y web/Python 3.12 en failure.
+
+**Importante:** la evidencia local sigue siendo válida (14 tests PASS sobre PostgreSQL 16), pero ORCHESTRUM no puede declararse CI-green ni M0A DONE.
+
+**Próximo paso:** diagnosticar/reintentar CI antes de cerrar el hito.
