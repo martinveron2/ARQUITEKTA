@@ -1,6 +1,8 @@
 """Real Chromium E2E, deterministic inference double; never claims a real Ollama run."""
 import json
+import os
 from pathlib import Path
+import shutil
 import socket
 import sys
 import tempfile
@@ -46,6 +48,12 @@ class BrowserRepairTests(unittest.TestCase):
             self.assertEqual(git(repo, 'status', '--porcelain'), '')
             self.assertTrue((Path(tmp) / 'runs/test/before/mobile-0.png').exists())
             self.assertTrue((Path(tmp) / 'runs/test/repair.patch').exists())
+            if os.environ.get('QUALITY_TEST_EVIDENCE'):
+                target = Path(os.environ['QUALITY_TEST_EVIDENCE']) / 'repair'
+                target.mkdir(parents=True, exist_ok=True)
+                for name in ['before', 'after-1']:
+                    shutil.copytree(Path(tmp) / 'runs/test' / name, target / name, dirs_exist_ok=True)
+                shutil.copy(Path(tmp) / 'runs/test/report.json', target / 'report.json')
 
 
 if __name__ == '__main__': unittest.main()

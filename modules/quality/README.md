@@ -8,6 +8,8 @@ Implementación inicial: dashboard HTTP con token, registry local, ejecuciones s
 
 No es una certificación total. No incluye todavía descubrimiento autónomo de todas las pantallas, medición de carga masiva, acceso a Safari/iOS real, evaluación visual estética autónoma, axe completo, gestor distribuido de workers, ni sincronización con ORCHESTRUM. La configuración inicial de cada app es necesaria. Una prueba que no pudo ejecutarse queda BLOCKED, nunca aprobada.
 
+Evidencia inicial de CI: [Chromium + reparación del fixture, 5 tests PASS](https://github.com/martinveron2/ARQUITEKTA/actions/runs/39696777490). La inferencia de esa prueba es un doble determinista; no valida un modelo Ollama real.
+
 ## Instalación local
 
 Requiere Python 3.11+, Git y el runtime de cada aplicación. Usar checkouts de prueba con bases y credenciales de prueba; la reparación no se ejecuta dentro del checkout que sirve producción.

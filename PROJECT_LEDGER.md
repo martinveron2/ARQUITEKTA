@@ -10,7 +10,9 @@ Implementación: `modules/quality` con dashboard propio, API local con token, re
 
 Validación: 4 unit tests PASS; smoke existente 6 checks PASS; compilación Python y sintaxis JS PASS. El E2E de botón roto + overflow intentado localmente quedó BLOCKED por ausencia de Playwright Python/Chromium y registro inaccesible; no se presenta como aprobado. Docker tampoco está disponible. Se agrega workflow CI para prueba Chromium real con inferencia doble de prueba. Modelo real aún no conectado.
 
-Próximo paso: comprobar CI, levantar worker en host de pruebas con Ollama disponible, registrar un checkout de app y sus recorridos, verificar ciclo real y pantalla. Carga masiva, navegación autónoma y evaluación estética completa permanecen en roadmap; no se declaran operativas.
+CI posterior verificada: https://github.com/martinveron2/ARQUITEKTA/actions/runs/39696777490 — 5 tests PASS, incluyendo Chromium real y ciclo detección → reparación → verificación del fixture. Inferencia con doble determinista, no Ollama real. Se amplía CI con dashboard responsive, capturas y build Next. PR de trabajo: https://github.com/martinveron2/ARQUITEKTA/pull/8 .
+
+Próximo paso: comprobar CI ampliada, levantar worker en host de pruebas con Ollama disponible, registrar un checkout de app y sus recorridos, verificar ciclo real y pantalla. Carga masiva, navegación autónoma y evaluación estética completa permanecen en roadmap; no se declaran operativas.
 
 ## 2026-09-28 — FOUNDATION
 **Tipo:** DECISION

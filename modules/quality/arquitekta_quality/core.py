@@ -56,7 +56,7 @@ def safe_source(root, name, allowed):
         raise Blocked('Archivo fuera del alcance de reparación: ' + str(name))
     root = Path(root).resolve()
     candidate = root.joinpath(*p.parts)
-    if candidate.is_symlink() or not candidate.resolve().is_relative_to(root):
+    if any(part.is_symlink() for part in [candidate, *candidate.parents] if part != root and part.is_relative_to(root)) or not candidate.resolve().is_relative_to(root):
         raise Blocked('Symlink o ruta fuera del proyecto')
     if not candidate.is_file() or candidate.stat().st_size > 80000:
         raise Blocked('Archivo ausente o demasiado grande: ' + name)

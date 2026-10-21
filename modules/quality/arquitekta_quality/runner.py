@@ -58,12 +58,13 @@ def run(project, folder, mode, ai, publish=None):
         if not allowed:
             raise Blocked('Configurar editable_files para permitir reparaciones')
         current = baseline
+        image_folder = folder / 'before'
         for attempt in range(1, min(3, max(1, int(project.get('max_attempts', 2)))) + 1):
             update('ANALYZING', f'Ollama analiza evidencia; intento {attempt}')
             sources = {name: safe_source(workspace, name, allowed).read_text() for name in allowed}
             if sum(len(v) for v in sources.values()) > 160000:
                 raise Blocked('Contexto demasiado grande; dividir archivos por módulo')
-            proposal = ai.propose(current, sources, (folder / 'before').glob('*.png'))
+            proposal = ai.propose(current, sources, image_folder.glob('*.png'))
             write_json(folder / f'proposal-{attempt}.json', proposal)
             report['attempts'].append({'number': attempt, 'summary': proposal['summary']})
             update('REPAIRING', proposal['summary'])
@@ -71,6 +72,7 @@ def run(project, folder, mode, ai, publish=None):
             update('VERIFYING', f'Repitiendo las mismas pruebas; intento {attempt}')
             current = evaluate(workspace, f'after-{attempt}')
             report['after'] = current
+            image_folder = folder / f'after-{attempt}'
             if not current['findings']:
                 # Model never controls acceptance criteria. Keep diff for human review.
                 diff = git(workspace, 'diff', '--no-ext-diff', '--binary')

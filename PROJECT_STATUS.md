@@ -25,8 +25,8 @@ QUALITY Engine: implementación inicial en `modules/quality`, dashboard propio y
 - **Documentado:** contrato multiapp, operación local/Docker, scopes, limitaciones y portabilidad.
 - **Codificado:** runner, Playwright, Ollama, rama Git, evidencia, control plane autenticado y dashboard.
 - **Testeado localmente:** cuatro unit tests del motor/adapters; smoke existente 6 checks; compilación Python y sintaxis JS.
-- **Bloqueado localmente:** E2E Chromium por ausencia de paquete/navegador y acceso al registro Python. Workflow CI incorpora esa prueba real con doble determinista de inferencia.
-- **No verificado:** build Next completo, Docker y ejecución con un modelo Ollama real.
+- **E2E Chromium verificado en CI:** botón roto y overflow móvil detectados y reparados en worktree; 5 tests PASS, inferencia con doble determinista. Evidencia: https://github.com/martinveron2/ARQUITEKTA/actions/runs/39696777490 . El intento local quedó bloqueado por dependencias; CI permitió comprobarlo.
+- **Pendiente de nueva CI:** prueba visual del dashboard y build Next. **No verificado:** Docker y ejecución con un modelo Ollama real.
 - **No desplegado ni operativo en apps reales:** requiere configurar checkouts y recorridos; ningún cambio en Aerovigía/BUMY/otros servidores.
-- **Evidencia y siguiente paso:** `modules/quality/tests`, `.github/workflows/quality.yml`; consultar resultado CI de la rama de trabajo y conectar un proyecto + Ollama. No hay URL pública nueva.
+- **Evidencia y siguiente paso:** `modules/quality/tests`, `.github/workflows/quality.yml`; comprobar CI ampliada de la rama y conectar un proyecto + Ollama. No hay URL pública nueva.
 

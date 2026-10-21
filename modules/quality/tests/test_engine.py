@@ -15,7 +15,10 @@ class EngineTests(unittest.TestCase):
             root = Path(tmp)
             (root / 'app.js').write_text('hello')
             (root / 'linked.js').symlink_to('/etc/passwd')
-            for path in ['../app.js', '.env', 'tests/foo.py', 'app.test.js', 'linked.js']:
+            (root / 'inside').mkdir()
+            (root / 'inside' / 'app.js').write_text('hello')
+            (root / 'alias').symlink_to(root / 'inside', target_is_directory=True)
+            for path in ['../app.js', '.env', 'tests/foo.py', 'app.test.js', 'linked.js', 'alias/app.js']:
                 with self.assertRaises(Blocked):
                     safe_source(root, path, [path])
             self.assertEqual(safe_source(root, 'app.js', ['app.js']).read_text(), 'hello')
