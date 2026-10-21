@@ -1,0 +1,23 @@
+name: Quality engine
+on:
+  push:
+    paths: ['modules/quality/**', '.github/workflows/quality.yml']
+  pull_request:
+    paths: ['modules/quality/**', '.github/workflows/quality.yml']
+permissions:
+  contents: read
+jobs:
+  browser-repair:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: modules/quality
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python -m playwright install --with-deps chromium
+      - run: python -m unittest discover -s tests -v

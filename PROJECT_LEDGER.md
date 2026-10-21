@@ -1,5 +1,17 @@
 # PROJECT LEDGER
 
+## 2026-10-21 — QUALITY PORTABLE / PEDIDO DE MARTÍN
+**Tipo:** IMPLEMENTATION CHECKPOINT
+**Estado:** CODED / PARTIALLY TESTED / NOT DEPLOYED
+
+Pedido: conservar diseño/marca en ARQUITEKTA y agregar un motor enchufable multiapp que pruebe frontend responsive y recorridos, encuentre fallos, repare con Ollama local y vuelva a verificar; portabilidad Docker, código bajo control MVA.
+
+Implementación: `modules/quality` con dashboard propio, API local con token, registry de proyectos, runner serializado, eventos, Git worktree, scopes de reparación, adapter `/api/chat`, Chromium en 320/390/768/1440 px, recorridos con aserciones, evidencia, patch/commit en rama. Enlace `/quality` desde Inicio. Sin proveedor pago, sin activar GPU, sin publicar cambios ni tocar servidores de apps existentes.
+
+Validación: 4 unit tests PASS; smoke existente 6 checks PASS; compilación Python y sintaxis JS PASS. El E2E de botón roto + overflow intentado localmente quedó BLOCKED por ausencia de Playwright Python/Chromium y registro inaccesible; no se presenta como aprobado. Docker tampoco está disponible. Se agrega workflow CI para prueba Chromium real con inferencia doble de prueba. Modelo real aún no conectado.
+
+Próximo paso: comprobar CI, levantar worker en host de pruebas con Ollama disponible, registrar un checkout de app y sus recorridos, verificar ciclo real y pantalla. Carga masiva, navegación autónoma y evaluación estética completa permanecen en roadmap; no se declaran operativas.
+
 ## 2026-09-28 — FOUNDATION
 **Tipo:** DECISION
 **Estado:** ACTIVE
@@ -108,3 +120,4 @@ Tras el cierre de M0A, GitHub Actions run #144 terminó en FAILURE. Los jobs rep
 **Importante:** la evidencia local sigue siendo válida (14 tests PASS sobre PostgreSQL 16), pero ORCHESTRUM no puede declararse CI-green ni M0A DONE.
 
 **Próximo paso:** diagnosticar/reintentar CI antes de cerrar el hito.
+

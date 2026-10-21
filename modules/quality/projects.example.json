@@ -1,0 +1,21 @@
+{
+  "projects": [{
+    "id": "example",
+    "name": "Ejemplo local — reemplazar por una app real",
+    "repo": "/projects/example",
+    "base_url": "http://127.0.0.1:4173/",
+    "start": ["python", "-m", "http.server", "4173", "--bind", "127.0.0.1"],
+    "verify": ["python", "-m", "unittest", "discover", "-s", "tests"],
+    "editable_files": ["index.html", "style.css", "app.js"],
+    "max_attempts": 2,
+    "journeys": [{
+      "name": "Guardar un dato y comprobar respuesta",
+      "steps": [
+        {"action": "goto", "path": "/"},
+        {"action": "fill", "selector": "#name", "value": "Prueba MVA"},
+        {"action": "click", "selector": "#save"},
+        {"action": "expect_text", "selector": "#result", "value": "Prueba MVA"}
+      ]
+    }]
+  }]
+}

@@ -59,3 +59,18 @@
 - [ ] CI/CD
 - [ ] auditoría final MVA
 - [ ] aprobación explícita
+
+## QUALITY Engine — 2026-10-21
+
+| ID | Módulo | Prioridad / etapa | Estado | Aceptación / evidencia | Dependencia / próximo paso |
+|---|---|---|---|---|---|
+| QA-01 | core/adapters | P1 NOW | Codificado; unit tests locales pasan | Worktree aislado, scope de fuentes, JSON Ollama y propuestas exactas | Ejecutar E2E Chromium en CI |
+| QA-02 | frontend/backend | P1 NOW | Codificado | Dashboard con token, selección, ejecutar, progreso y capturas; `/quality` integrado | Prueba visual real del dashboard y conexión de instancia |
+| QA-03 | browser/QA | P1 NOW | Codificado; ejecución local bloqueada | Botón roto + overflow en fixture; reparación y verificación conservando original | Navegador/dependencias no disponibles en este host; workflow dedicado |
+| QA-04 | integración | P1 NEXT | No iniciado | Un proyecto MVA real y Ollama local producen evidencia antes/después | Registrar checkout, modelo, runtime y recorridos |
+| QA-05 | infra | P2 NEXT | Compose codificado; no ejecutado | Build y arranque Docker con volúmenes en otro host | Docker no disponible en este host |
+| QA-06 | visual/accesibilidad | P2 LATER | No iniciado | Referencias Design Profile, revisión estética y axe | Contrato visual y motor de visión verificados |
+| QA-07 | performance/core | P2 SCALE | No iniciado | Carga gradual, límites medidos y workers distribuidos | Recursos medidos y adapter ORCHESTRUM |
+
+No declarar el módulo operativo globalmente hasta QA-03/04/05 con evidencia real. Hito versión 0.2: conectar un proyecto y verificar un ciclo con Ollama, sin merge/deploy automático.
+
