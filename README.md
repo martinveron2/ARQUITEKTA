@@ -72,5 +72,12 @@ npm run audit:mva
 npm test
 ```
 
+## Probar y reparar · QUALITY
+
+Módulo portable para probar recorridos en móvil/escritorio y preparar correcciones con Ollama en una rama Git. Dashboard con progreso, evidencia y reparación acotada; ejecución local o Docker. No publica automáticamente ni certifica toda la aplicación.
+
+Acceso desde Inicio → **Probar y reparar** (`/quality`). Conectar la URL del motor mediante `NEXT_PUBLIC_QUALITY_URL`. Configuración, capacidades y límites: [modules/quality/README.md](modules/quality/README.md).
+
 ## Licencia
 Software propietario. Ver `LICENSE`.
+

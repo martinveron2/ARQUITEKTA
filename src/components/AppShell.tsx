@@ -31,6 +31,7 @@ export function AppShell(){
 
 function Home({onNew,onAudit,onModules}:{onNew:()=>void;onAudit:()=>void;onModules:()=>void}){
   return <>
+    <section className="panel"><p className="eyebrow">QUALITY · Módulo portable</p><h2>Probá y repará tus aplicaciones</h2><p>Recorridos reales, capturas responsive y correcciones con Ollama en una rama de trabajo.</p><a className="primary" href="/quality">Abrir Probar y reparar →</a></section>
     <div className="hero"><div><p className="eyebrow">Tu espacio de creación</p><h1>Inicio</h1></div><button className="primary" onClick={onNew}>+ Nueva app</button></div>
     <div className="stats"><Stat n="8" l="Proyectos"/><Stat n="3" l="En desarrollo"/><Stat n="2" l="En auditoría"/><Stat n="3" l="Listos"/></div>
     <SectionTitle title="Proyectos recientes" action="Ver todos" />
@@ -54,3 +55,4 @@ function Stat({n,l}:{n:string;l:string}){return <div><b>{n}</b><span>{l}</span><
 function SectionTitle({title,action,onAction}:{title:string;action:string;onAction?:()=>void}){return <div className="sectionTitle"><h2>{title}</h2><button onClick={onAction}>{action} ›</button></div>}
 function SubHeader({title,onBack}:{title:string;onBack:()=>void}){return <div className="subHeader"><button onClick={onBack}>←</button><h1>{title}</h1><span/></div>}
 function AuditBlock({tone,title,count,items}:{tone:string;title:string;count:string;items:string[]}){return <section className={'auditBlock '+tone}><header><b>{title}</b><span>{count}</span></header>{items.map(i=><p key={i}>✓ {i}</p>)}</section>}
+

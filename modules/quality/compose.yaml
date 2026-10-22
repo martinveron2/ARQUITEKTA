@@ -1,0 +1,21 @@
+services:
+  quality:
+    build: .
+    init: true
+    user: "${QUALITY_UID:-1000}:${QUALITY_GID:-1000}"
+    ports:
+      - "127.0.0.1:8787:8787"
+    shm_size: 1gb
+    environment:
+      QUALITY_TOKEN: ${QUALITY_TOKEN:?Definir QUALITY_TOKEN}
+      OLLAMA_URL: ${OLLAMA_URL:-http://host.docker.internal:11434}
+      OLLAMA_MODEL: ${OLLAMA_MODEL:?Elegir un modelo local instalado}
+      OLLAMA_VISION: ${OLLAMA_VISION:-0}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - ./projects.json:/config/projects.json:ro
+      - ./quality-data:/data
+      - ${QUALITY_PROJECTS_DIR:?Directorio de checkouts de prueba}:/projects
+    security_opt:
+      - no-new-privileges:true

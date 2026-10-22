@@ -39,3 +39,12 @@ ARQUITEKTA mantiene una frontera explícita entre arquitectura e identidad visua
 Directiva completa: `docs/DESIGN_ENGINE.md`.
 
 **Regla:** la arquitectura es estándar; la identidad es del usuario.
+
+## QUALITY Engine (2026-10-21)
+
+Módulo independiente `modules/quality`: control plane HTTP local + registry de proyectos + runner serializado + browser adapter Playwright + inference adapter Ollama + reparación en Git worktree. La UI principal enlaza `/quality` y recibe sólo la URL del motor por configuración; no se acopla a sus proveedores.
+
+Contrato: proyecto registrado → copia de prueba → recorridos responsive y verificación del proyecto → evidencia → propuesta estructurada → cambios permitidos → repetición de pruebas → rama revisable. No se publica automáticamente. Modelo, contexto editable, pasos de negocio y runtime de cada app son configurables. DESIGN sigue gobernando identidad visual; QUALITY preserva esa identidad y verifica comportamiento/encuadre.
+
+Ejecución local o Docker Compose, con estado y evidencia portables en disco. Primera versión serializada; la cola distribuida, descubrimiento autónomo, carga masiva y adapter ORCHESTRUM son evoluciones pendientes, no capacidades operativas actuales. Detalles: `modules/quality/README.md`.
+
