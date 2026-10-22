@@ -2,6 +2,7 @@ services:
   quality:
     build: .
     init: true
+    user: "${QUALITY_UID:-1000}:${QUALITY_GID:-1000}"
     ports:
       - "127.0.0.1:8787:8787"
     shm_size: 1gb

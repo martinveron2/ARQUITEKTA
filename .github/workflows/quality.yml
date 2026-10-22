@@ -1,6 +1,7 @@
 name: Quality engine
 on:
   push:
+    branches: [main]
     paths: ['modules/quality/**', 'src/**', 'package*.json', '.github/workflows/quality.yml']
   pull_request:
     paths: ['modules/quality/**', 'src/**', 'package*.json', '.github/workflows/quality.yml']
@@ -40,3 +41,10 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npm test
       - run: npm run build
+  portable-image:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t arquitekta-quality modules/quality
+      - run: docker run --rm --entrypoint python arquitekta-quality -c "from arquitekta_quality.runner import run; from playwright.sync_api import sync_playwright; p=sync_playwright().start(); b=p.chromium.launch(); b.close(); p.stop(); print('portable Chromium OK')"

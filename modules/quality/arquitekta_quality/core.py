@@ -40,7 +40,7 @@ def command(argv, cwd, timeout=180):
 
 
 def git(repo, *args):
-    code, output = command(['git', *args], repo)
+    code, output = command(['git', '-c', 'safe.directory=' + str(Path(repo).resolve()), *args], repo)
     if code:
         raise Blocked('Git: ' + output)
     return output.strip()

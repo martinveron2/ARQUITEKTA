@@ -36,6 +36,9 @@ El adapter no descarga modelos ni activa servidores GPU. Usar un modelo de códi
 
 ```bash
 export QUALITY_PROJECTS_DIR="/ruta/absoluta/a/checkouts-de-prueba"
+export QUALITY_UID="$(id -u)"
+export QUALITY_GID="$(id -g)"
+mkdir -p quality-data
 # Cada repo de projects.json debe apuntar a /projects/nombre.
 # QUALITY_TOKEN y OLLAMA_MODEL deben estar definidos como arriba.
 docker compose up --build
