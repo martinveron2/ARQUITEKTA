@@ -164,3 +164,9 @@ ARQUITEKTA no vende una plantilla visual propietaria.
 Vende el motor capaz de transformar una intención visual en un sistema de diseño reutilizable, versionado y conectado a una arquitectura de software sólida.
 
 > **MVA define cómo debe estar construido el sistema. El usuario define cómo debe verse.**
+
+## 11. UX EXPERIENCE — estándar transversal
+
+El módulo DESIGN incorpora un **Experience Profile** separado del Design Profile visual. Su especificación, métricas de aceptación, auditoría UX/UI y piloto Aerovigía se definen en [MVA_EXPERIENCE_STANDARD.md](./MVA_EXPERIENCE_STANDARD.md).
+
+Esta incorporación está **especificada**, no implementada: el motor debe auditar recorridos reales, evidenciar fallos desktop/móvil y proponer reparaciones reversibles; ninguna prueba o integración se da por completada sin evidencia.
