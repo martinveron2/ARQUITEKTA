@@ -1,0 +1,17 @@
+test_broken_button_and_mobile_overflow_are_repaired_in_worktree (test_browser_repair.BrowserRepairTests.test_broken_button_and_mobile_overflow_are_repaired_in_worktree) ... ok
+test_dashboard_link_carries_id_without_credentials (test_connector.ConnectorTests.test_dashboard_link_carries_id_without_credentials) ... ok
+test_persist_idempotent_connection_and_reject_unknown_or_production (test_connector.ConnectorTests.test_persist_idempotent_connection_and_reject_unknown_or_production) ... ok
+test_dashboard_connects_without_overflow_on_mobile_and_desktop (test_dashboard.DashboardTests.test_dashboard_connects_without_overflow_on_mobile_and_desktop) ... /usr/lib/python3.14/tempfile.py:484: ResourceWarning: Implicitly cleaning up <HTTPError 401: 'Unauthorized'>
+  _warnings.warn(self.warn_message, ResourceWarning)
+ok
+test_ambiguous_match_is_blocked (test_engine.EngineTests.test_ambiguous_match_is_blocked) ... ok
+test_atomic_validation_rejects_partial_proposals (test_engine.EngineTests.test_atomic_validation_rejects_partial_proposals) ... ok
+test_ollama_protocol_uses_schema_no_stream (test_engine.EngineTests.test_ollama_protocol_uses_schema_no_stream) ... ok
+test_path_escape_symlink_and_protected_files (test_engine.EngineTests.test_path_escape_symlink_and_protected_files) ... ok
+test_readonly_repair_cannot_start_even_without_model (test_pilot_permissions.PilotPermissionTests.test_readonly_repair_cannot_start_even_without_model) ... ok
+test_redaction_removes_structured_credentials_and_bearer (test_pilot_permissions.PilotPermissionTests.test_redaction_removes_structured_credentials_and_bearer) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 29.368s
+
+OK
