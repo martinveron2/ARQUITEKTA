@@ -123,3 +123,7 @@ Tras el cierre de M0A, GitHub Actions run #144 terminó en FAILURE. Los jobs rep
 
 **Próximo paso:** diagnosticar/reintentar CI antes de cerrar el hito.
 
+
+
+## 2026-10-22 — Continuidad y piloto supervisado
+Se preservó el motor de feat/quality-ollama-portable-20261021. Se agrega conexión por ID preconfigurado y permiso audit-only; reparación se rechaza en API y runner. La integración MVA Cloud se prueba en preview loopback, en otra rama; publicar exige aprobación independiente. La primera auditoría real de la preview AEROVIGÍA evidencia 401 QA; no implica fallo de producción. 10 tests PASS y circuito visual verificado. Ver docs/reports/arkitekta-pilot-20261022/REPORT.md.

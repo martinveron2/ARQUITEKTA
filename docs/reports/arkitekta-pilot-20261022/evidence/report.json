@@ -1,0 +1,1690 @@
+{
+  "id": "20261023-024433-b86bbe42",
+  "project": "aerovigia",
+  "mode": "test",
+  "state": "FAIL",
+  "events": [
+    {
+      "at": 1792723473.9426644,
+      "state": "PREPARING",
+      "detail": "Validando proyecto y creando copia aislada"
+    },
+    {
+      "at": 1792723473.9514127,
+      "state": "TESTING",
+      "detail": "Probando recorridos en cuatro tamaños de pantalla"
+    },
+    {
+      "at": 1792723474.4650958,
+      "state": "TESTING",
+      "detail": "mobile · Inicio y semáforo operativo (1/3)"
+    },
+    {
+      "at": 1792723480.7115633,
+      "state": "TESTING",
+      "detail": "mobile · Consultas del día y totales (2/3)"
+    },
+    {
+      "at": 1792723482.4034326,
+      "state": "TESTING",
+      "detail": "mobile · Lectura y revisión de correo ficticio (3/3)"
+    },
+    {
+      "at": 1792723488.7335808,
+      "state": "TESTING",
+      "detail": "small-mobile · Inicio y semáforo operativo (1/3)"
+    },
+    {
+      "at": 1792723494.841674,
+      "state": "TESTING",
+      "detail": "small-mobile · Consultas del día y totales (2/3)"
+    },
+    {
+      "at": 1792723496.2216492,
+      "state": "TESTING",
+      "detail": "small-mobile · Lectura y revisión de correo ficticio (3/3)"
+    },
+    {
+      "at": 1792723502.54681,
+      "state": "TESTING",
+      "detail": "tablet · Inicio y semáforo operativo (1/3)"
+    },
+    {
+      "at": 1792723508.749126,
+      "state": "TESTING",
+      "detail": "tablet · Consultas del día y totales (2/3)"
+    },
+    {
+      "at": 1792723510.3849738,
+      "state": "TESTING",
+      "detail": "tablet · Lectura y revisión de correo ficticio (3/3)"
+    },
+    {
+      "at": 1792723516.9043033,
+      "state": "TESTING",
+      "detail": "desktop · Inicio y semáforo operativo (1/3)"
+    },
+    {
+      "at": 1792723523.2337577,
+      "state": "TESTING",
+      "detail": "desktop · Consultas del día y totales (2/3)"
+    },
+    {
+      "at": 1792723524.7376738,
+      "state": "TESTING",
+      "detail": "desktop · Lectura y revisión de correo ficticio (3/3)"
+    },
+    {
+      "at": 1792723531.3456607,
+      "state": "FAIL",
+      "detail": "Se encontraron fallos; evidencia disponible para reparar"
+    }
+  ],
+  "attempts": [],
+  "started": 1792723473.9426608,
+  "base_commit": "787b05c023521d2d75eb23d7a119aca51b3b0f65",
+  "target": "http://127.0.0.1:18252/",
+  "environment": "test",
+  "test_data": "synthetic",
+  "writes_allowed": false,
+  "source_target_identity": "operator-configured; not independently attested",
+  "device": "Chromium emulation; no physical device",
+  "before": {
+    "checks": [
+      {
+        "id": "mobile-0",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": "mobile"
+      },
+      {
+        "id": "mobile-1",
+        "journey": "Consultas del día y totales",
+        "viewport": "mobile"
+      },
+      {
+        "id": "mobile-2",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": "mobile"
+      },
+      {
+        "id": "small-mobile-0",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": "small-mobile"
+      },
+      {
+        "id": "small-mobile-1",
+        "journey": "Consultas del día y totales",
+        "viewport": "small-mobile"
+      },
+      {
+        "id": "small-mobile-2",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": "small-mobile"
+      },
+      {
+        "id": "tablet-0",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": "tablet"
+      },
+      {
+        "id": "tablet-1",
+        "journey": "Consultas del día y totales",
+        "viewport": "tablet"
+      },
+      {
+        "id": "tablet-2",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": "tablet"
+      },
+      {
+        "id": "desktop-0",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": "desktop"
+      },
+      {
+        "id": "desktop-1",
+        "journey": "Consultas del día y totales",
+        "viewport": "desktop"
+      },
+      {
+        "id": "desktop-2",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": "desktop"
+      }
+    ],
+    "findings": [
+      {
+        "check": "mobile-0",
+        "kind": "journey-failed",
+        "detail": "Locator expected to be visible\nActual value: None\nError: element(s) not found \nCall log:\n  - Expect \"to_be_visible\" with timeout 5000ms\n  - waiting for locator(\".av-home-next\")\n",
+        "severity": "high",
+        "screenshot": "mobile-0.png",
+        "trace": "mobile-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "mobile-0",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "mobile-0.png",
+        "trace": "mobile-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ]
+      },
+      {
+        "check": "mobile-0",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "mobile-0.png",
+        "trace": "mobile-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ]
+      },
+      {
+        "check": "mobile-1",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "mobile-1.png",
+        "trace": "mobile-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ]
+      },
+      {
+        "check": "mobile-1",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "mobile-1.png",
+        "trace": "mobile-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ]
+      },
+      {
+        "check": "mobile-2",
+        "kind": "journey-failed",
+        "detail": "Locator expected to contain text 'Lector'\nActual value: No se pudo actualizar · Iniciá sesión desde Configuración \nCall log:\n  - Expect \"to_contain_text\" with timeout 5000ms\n  - waiting for locator(\"#av-mail-status\")\n    9 × locator resolved to <div role=\"status\" aria-live=\"polite\" id=\"av-mail-status\" class=\"av-work-status\">No se pudo actualizar · Iniciá sesión desde Confi…</div>\n      - unexpected value \"No se pudo actualizar · Iniciá sesión desde Configuración\"\n",
+        "severity": "high",
+        "screenshot": "mobile-2.png",
+        "trace": "mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "mobile-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "mobile-2.png",
+        "trace": "mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "mobile-2",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "mobile-2.png",
+        "trace": "mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "mobile-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/triage",
+        "severity": "high",
+        "screenshot": "mobile-2.png",
+        "trace": "mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "mobile-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/automation/mail-activity",
+        "severity": "high",
+        "screenshot": "mobile-2.png",
+        "trace": "mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "small-mobile-0",
+        "kind": "journey-failed",
+        "detail": "Locator expected to be visible\nActual value: None\nError: element(s) not found \nCall log:\n  - Expect \"to_be_visible\" with timeout 5000ms\n  - waiting for locator(\".av-home-next\")\n",
+        "severity": "high",
+        "screenshot": "small-mobile-0.png",
+        "trace": "small-mobile-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "small-mobile-0",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "small-mobile-0.png",
+        "trace": "small-mobile-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ]
+      },
+      {
+        "check": "small-mobile-0",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "small-mobile-0.png",
+        "trace": "small-mobile-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ]
+      },
+      {
+        "check": "small-mobile-1",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "small-mobile-1.png",
+        "trace": "small-mobile-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ]
+      },
+      {
+        "check": "small-mobile-1",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "small-mobile-1.png",
+        "trace": "small-mobile-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ]
+      },
+      {
+        "kind": "covered-control",
+        "detail": "Del día",
+        "check": "small-mobile-2",
+        "severity": "medium",
+        "screenshot": "small-mobile-2.png",
+        "trace": "small-mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "kind": "covered-control",
+        "detail": "Total disponible",
+        "check": "small-mobile-2",
+        "severity": "medium",
+        "screenshot": "small-mobile-2.png",
+        "trace": "small-mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "small-mobile-2",
+        "kind": "journey-failed",
+        "detail": "Locator expected to contain text 'Lector'\nActual value: No se pudo actualizar · Iniciá sesión desde Configuración \nCall log:\n  - Expect \"to_contain_text\" with timeout 5000ms\n  - waiting for locator(\"#av-mail-status\")\n    9 × locator resolved to <div role=\"status\" aria-live=\"polite\" id=\"av-mail-status\" class=\"av-work-status\">No se pudo actualizar · Iniciá sesión desde Confi…</div>\n      - unexpected value \"No se pudo actualizar · Iniciá sesión desde Configuración\"\n",
+        "severity": "high",
+        "screenshot": "small-mobile-2.png",
+        "trace": "small-mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "small-mobile-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "small-mobile-2.png",
+        "trace": "small-mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "small-mobile-2",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "small-mobile-2.png",
+        "trace": "small-mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "small-mobile-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/triage",
+        "severity": "high",
+        "screenshot": "small-mobile-2.png",
+        "trace": "small-mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "small-mobile-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/automation/mail-activity",
+        "severity": "high",
+        "screenshot": "small-mobile-2.png",
+        "trace": "small-mobile-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "kind": "covered-control",
+        "detail": "⚙Configuración",
+        "check": "tablet-0",
+        "severity": "medium",
+        "screenshot": "tablet-0.png",
+        "trace": "tablet-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "tablet-0",
+        "kind": "journey-failed",
+        "detail": "Locator expected to be visible\nActual value: None\nError: element(s) not found \nCall log:\n  - Expect \"to_be_visible\" with timeout 5000ms\n  - waiting for locator(\".av-home-next\")\n",
+        "severity": "high",
+        "screenshot": "tablet-0.png",
+        "trace": "tablet-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "tablet-0",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "tablet-0.png",
+        "trace": "tablet-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ]
+      },
+      {
+        "check": "tablet-0",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "tablet-0.png",
+        "trace": "tablet-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ]
+      },
+      {
+        "kind": "covered-control",
+        "detail": "⚙Configuración",
+        "check": "tablet-1",
+        "severity": "medium",
+        "screenshot": "tablet-1.png",
+        "trace": "tablet-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "kind": "covered-control",
+        "detail": "Cargar historial",
+        "check": "tablet-1",
+        "severity": "medium",
+        "screenshot": "tablet-1.png",
+        "trace": "tablet-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "tablet-1",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "tablet-1.png",
+        "trace": "tablet-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ]
+      },
+      {
+        "check": "tablet-1",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "tablet-1.png",
+        "trace": "tablet-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ]
+      },
+      {
+        "kind": "covered-control",
+        "detail": "⚙Configuración",
+        "check": "tablet-2",
+        "severity": "medium",
+        "screenshot": "tablet-2.png",
+        "trace": "tablet-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "tablet-2",
+        "kind": "journey-failed",
+        "detail": "Locator expected to contain text 'Lector'\nActual value: No se pudo actualizar · Iniciá sesión desde Configuración \nCall log:\n  - Expect \"to_contain_text\" with timeout 5000ms\n  - waiting for locator(\"#av-mail-status\")\n    9 × locator resolved to <div role=\"status\" aria-live=\"polite\" id=\"av-mail-status\" class=\"av-work-status\">No se pudo actualizar · Iniciá sesión desde Confi…</div>\n      - unexpected value \"No se pudo actualizar · Iniciá sesión desde Configuración\"\n",
+        "severity": "high",
+        "screenshot": "tablet-2.png",
+        "trace": "tablet-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "tablet-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "tablet-2.png",
+        "trace": "tablet-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "tablet-2",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "tablet-2.png",
+        "trace": "tablet-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "tablet-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/triage",
+        "severity": "high",
+        "screenshot": "tablet-2.png",
+        "trace": "tablet-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "tablet-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/automation/mail-activity",
+        "severity": "high",
+        "screenshot": "tablet-2.png",
+        "trace": "tablet-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 768,
+          "height": 1024
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "desktop-0",
+        "kind": "journey-failed",
+        "detail": "Locator expected to be visible\nActual value: None\nError: element(s) not found \nCall log:\n  - Expect \"to_be_visible\" with timeout 5000ms\n  - waiting for locator(\".av-home-next\")\n",
+        "severity": "high",
+        "screenshot": "desktop-0.png",
+        "trace": "desktop-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "desktop-0",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "desktop-0.png",
+        "trace": "desktop-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ]
+      },
+      {
+        "check": "desktop-0",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "desktop-0.png",
+        "trace": "desktop-0.zip",
+        "journey": "Inicio y semáforo operativo",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "expect_visible",
+            "selector": ".av-home-next"
+          }
+        ]
+      },
+      {
+        "kind": "covered-control",
+        "detail": "Cargar historial",
+        "check": "desktop-1",
+        "severity": "medium",
+        "screenshot": "desktop-1.png",
+        "trace": "desktop-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "desktop-1",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "desktop-1.png",
+        "trace": "desktop-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ]
+      },
+      {
+        "check": "desktop-1",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "desktop-1.png",
+        "trace": "desktop-1.zip",
+        "journey": "Consultas del día y totales",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-open"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-dialog"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Total disponible')"
+          },
+          {
+            "action": "click",
+            "selector": "#av-ai-dialog button:has-text('Del día')"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-ai-question"
+          }
+        ]
+      },
+      {
+        "check": "desktop-2",
+        "kind": "journey-failed",
+        "detail": "Locator expected to contain text 'Lector'\nActual value: No se pudo actualizar · Iniciá sesión desde Configuración \nCall log:\n  - Expect \"to_contain_text\" with timeout 5000ms\n  - waiting for locator(\"#av-mail-status\")\n    9 × locator resolved to <div role=\"status\" aria-live=\"polite\" id=\"av-mail-status\" class=\"av-work-status\">No se pudo actualizar · Iniciá sesión desde Confi…</div>\n      - unexpected value \"No se pudo actualizar · Iniciá sesión desde Configuración\"\n",
+        "severity": "high",
+        "screenshot": "desktop-2.png",
+        "trace": "desktop-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ],
+        "reproduction": "Repetir los pasos adjuntos en una copia con datos sintéticos"
+      },
+      {
+        "check": "desktop-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/dashboard",
+        "severity": "high",
+        "screenshot": "desktop-2.png",
+        "trace": "desktop-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "desktop-2",
+        "kind": "runtime-error",
+        "detail": "Console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "severity": "high",
+        "screenshot": "desktop-2.png",
+        "trace": "desktop-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "desktop-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/operations/triage",
+        "severity": "high",
+        "screenshot": "desktop-2.png",
+        "trace": "desktop-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      },
+      {
+        "check": "desktop-2",
+        "kind": "runtime-error",
+        "detail": "HTTP 401: /v1/automation/mail-activity",
+        "severity": "high",
+        "screenshot": "desktop-2.png",
+        "trace": "desktop-2.zip",
+        "journey": "Lectura y revisión de correo ficticio",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "steps": [
+          {
+            "action": "goto",
+            "path": "/"
+          },
+          {
+            "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+          },
+          {
+            "action": "expect_visible",
+            "selector": "#av-mail-status"
+          },
+          {
+            "action": "expect_text",
+            "selector": "#av-mail-status",
+            "value": "Lector"
+          }
+        ]
+      }
+    ],
+    "coverage": "Recorridos configurados y geometría responsive en Chromium. No equivale a toda la app, Safari/iOS real ni auditoría completa de accesibilidad.",
+    "verification_exit_code": 0
+  },
+  "evidence": {
+    "before/tablet-2.png": "158f92e541031565476148291957aa51f7cddeec25d6288fe45aeead3929594e",
+    "before/mobile-2.png": "94b9f78ba311e9adb793dd9f7344d44e59ccd38c7d29a2f24616ba04a6d14385",
+    "before/tablet-1.png": "e6f9d820f0ed7f2c3bedcbc9ba787fb40a7740b9fd71b4c78072c660c0417b7d",
+    "before/tablet-1.zip": "1a668318d39621893369ba2ce937e5278a2079106e5f602388f00388cc8849b9",
+    "before/tablet-0.zip": "fe93675808689aada7a72ef2f4719eb70996778bd167ae82384889f006bb3603",
+    "before/tablet-0.png": "3f0915eecb4d58128e7b041fb02c8edee608b6211a9a018ef211bd05e81adc18",
+    "before/small-mobile-2.zip": "eaa9d9d5cc62a4921f3536494b473ad4f154fc406f5737cb3b716986e62f93c7",
+    "before/mobile-1.png": "db6a5f6928c5ad01657c7ce5072828be3971df88f4b1b8ce2c71d0c39184ffe8",
+    "before/desktop-2.png": "e7c4a23edbb45d43c9c63a166ce5217f62e98d854f7f5b9a1799a432db727a38",
+    "before/desktop-0.png": "afa64b4ea60ef31c74147e29328cf0318d6efabd6ba89e673c593e68dc06c293",
+    "before/desktop-0.zip": "16db0d5778c62b20b34920ee9035dc3fee93d828ce2bc9a23b22ea7b8167d398",
+    "before/desktop-1.png": "84e34a337055dcb00e6910671881de376029b406e1802b28c182137f9c2547c8",
+    "before/checks.json": "6d88587de938b32e2201d72b2257673ffcb68f335dbe8c9a254f88cbb338dce5",
+    "before/small-mobile-1.png": "371168f59c25d2f3a08b5b3af94ff40cb746d10e813d5fb176beff4b96477c2a",
+    "before/mobile-0.zip": "8751ec9a32c94aba0203689b8064a0df0425fdaa18b770a19b146b6258b57d23",
+    "before/mobile-2.zip": "d55dd49ccb20a3b149148149b4036e05043a8b40c9d734e13feeba33635f7a0c",
+    "before/desktop-2.zip": "c6a3e5c38f9e7754f8002da4aff70e1d042e3cdc327dbbbcc92ca88f88a5e622",
+    "before/tablet-2.zip": "7e2773d08b4da1edb32859c5dfb2c61527aefa03d173c9053b00df10729f6100",
+    "before/small-mobile-0.zip": "5f8b7c20a21f5d8318af430203076f089f5834feeaae1918493e486c8f335e4e",
+    "before/small-mobile-1.zip": "b2e1c64fa405f93ad7204515d360701f3da976603f60f8154130e167f871dc32",
+    "before/small-mobile-0.png": "2b8fa51aa00cc684b27735f67591365a214aaf30aaee690ee20edf23dce6008d",
+    "before/small-mobile-2.png": "45f65d1960cd1a3a4c5b48a879e47e7e72befcac1ec0ae8bd9c1c693c8858702",
+    "before/mobile-1.zip": "92bf42f452dd9d6859a34776a97f7d2cf7cb3774c5b12c86291e1f1506f27e8f",
+    "before/mobile-0.png": "92bd9c90c83aadcd21950508c3534f495cf3819f06db3ca5646e862344265533",
+    "before/desktop-1.zip": "07c73986017dcea1be9da9f56a3e8376294143ad88aada83b6e6c78efe6e964f"
+  },
+  "finished": 1792723531.3641763
+}

@@ -95,3 +95,15 @@ python -m unittest discover -s tests -p test_browser_repair.py -v
 ```
 
 La primera suite prueba confinamiento de archivos, propuestas atómicas y protocolo HTTP de Ollama con un servidor doble. La segunda usa Chromium real y una app con botón roto y overflow responsive, verifica reparación en worktree y preservación del original; la inferencia es un doble determinista, no un modelo real. Documentar por separado toda ejecución con Ollama real y cada proyecto conectado.
+
+
+## Conector MVA Cloud y piloto read-only
+POST /api/connections recibe sólo {"project":"aerovigia"}; el ID debe existir en el archivo del operador con environment=test, test_data=synthetic y permissions=[audit]. GET /api/connections conserva conexiones tras reiniciar. El enlace /?project=ID selecciona la aplicación sin transmitir credenciales. No implica permiso para repararla.
+
+Ver aerovigia.pilot.example.json: ajustar repo/base_url a la preview de ensayo verificada. attach_readonly utiliza un servidor existente; no lo inicia ni detiene. Sólo permite HTTP loopback y bloquea las escrituras del navegador. El checkout debe estar limpio; la correspondencia de versión con el target es una declaración del operador. El test de verify comprueba el checkout, no certifica el backend adjunto.
+
+El dashboard admite subruta mediante un proxy que retire /arkitekta/ antes de reenviar a QUALITY. La preview de MVA Cloud usa scripts/preview_arkitekta.py en su rama de integración; no publicar ese proxy como servicio productivo. Directorio y token bajo control del operador; no guardar token en Git. Aprobar reparación y publicar son pasos distintos; el piloto sólo audita.
+
+La galería ofrece todas las capturas ANTES/DESPUÉS y descarga del JSON completo. Los trazados ZIP y logs permanecen en disco. La redacción básica de JSON no sanea PNG/ZIP ni garantiza detectar todos los secretos; usar datos sintéticos exclusivamente.
+
+Evidencia de ejecución: ../../docs/reports/arkitekta-pilot-20261022/REPORT.md.

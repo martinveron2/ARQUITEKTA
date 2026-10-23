@@ -14,3 +14,7 @@
 - Added authenticated dashboard, progress/evidence, `/quality` entry point and dedicated browser-repair CI.
 - Not deployed; real Ollama and project integration still require verification. See PROJECT_STATUS.md.
 
+
+
+## 2026-10-22
+Conector persistente, piloto read-only AEROVIGÍA, evidencia con pasos/viewport/severidad, progreso por recorrido, galería y descarga JSON, compatibilidad con subruta, tests de permisos y documentación de bloqueo QA 401.

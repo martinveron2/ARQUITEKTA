@@ -1,0 +1,15 @@
+{
+  "connection_http": 200,
+  "audit_http": 202,
+  "repair_rejected_http": 400,
+  "browser_flow": "MVA Cloud button -> ARKITECTA -> connection -> report -> screenshot",
+  "dashboard_widths": [
+    390,
+    1440
+  ],
+  "dashboard_overflow": false,
+  "public_deployment": false,
+  "source_changes_aerovigia": false,
+  "inference": "not exercised in pilot",
+  "run_id": "20261023-024433-b86bbe42"
+}

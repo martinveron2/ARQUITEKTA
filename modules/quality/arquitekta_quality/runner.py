@@ -1,7 +1,8 @@
 from pathlib import Path
+from contextlib import nullcontext
 import time
 from .browser import probe
-from .core import Blocked, app_server, apply_edits, command, git, safe_source, sha256, validate_project, write_json
+from .core import Blocked, app_server, apply_edits, command, git, safe_source, sha256, validate_project, redact, write_json
 
 
 def run(project, folder, mode, ai, publish=None):
@@ -21,10 +22,10 @@ def run(project, folder, mode, ai, publish=None):
     def evaluate(workspace, label):
         dest = folder / label
         dest.mkdir()
-        with app_server(project, workspace, dest):
-            result = probe(project, dest)
+        with (nullcontext() if project.get('attach_readonly') else app_server(project, workspace, dest)):
+            result = probe(project, dest, lambda detail: update('TESTING', detail))
         code, log = command(project['verify'], workspace, project.get('verify_timeout', 180))
-        (dest / 'verify.log').write_text(log)
+        (dest / 'verify.log').write_text(redact(log))
         result['verification_exit_code'] = code
         if code:
             result['findings'].append({'check': 'verify', 'kind': 'project-check-failed', 'detail': log[-4000:]})
@@ -34,13 +35,21 @@ def run(project, folder, mode, ai, publish=None):
     try:
         update('PREPARING', 'Validando proyecto y creando copia aislada')
         repo = validate_project(project)
+        if mode == 'repair' and (project.get('attach_readonly') or project.get('permissions') == ['audit']):
+            raise Blocked('Conexión de sólo auditoría: reparar requiere una copia aislada y autorización independiente')
         if git(repo, 'status', '--porcelain'):
             raise Blocked('El repositorio tiene cambios locales. Guardarlos en Git antes de probar')
         report['base_commit'] = git(repo, 'rev-parse', 'HEAD')
-        workspace = folder / 'worktree'
-        branch = 'quality/' + folder.name
-        git(repo, 'worktree', 'add', '-b', branch, str(workspace), report['base_commit'])
-        report.update(branch=branch, workspace=str(workspace))
+        if project.get('attach_readonly'):
+            workspace = repo
+            report.update(target=project['base_url'], environment='test', test_data='synthetic',
+                          writes_allowed=False, source_target_identity='operator-configured; not independently attested',
+                          device='Chromium emulation; no physical device')
+        else:
+            workspace = folder / 'worktree'
+            branch = 'quality/' + folder.name
+            git(repo, 'worktree', 'add', '-b', branch, str(workspace), report['base_commit'])
+            report.update(branch=branch, workspace=str(workspace))
         update('TESTING', 'Probando recorridos en cuatro tamaños de pantalla')
         baseline = evaluate(workspace, 'before')
         report['before'] = baseline
@@ -93,6 +102,9 @@ def run(project, folder, mode, ai, publish=None):
         report['error'] = str(e)
         update('BLOCKED', str(e))
     finally:
+        report['evidence'] = {p.relative_to(folder).as_posix(): sha256(p)
+                              for p in folder.glob('*/*') if p.suffix in {'.png', '.zip', '.json'}
+                              and p.parent.name != 'worktree'}
         report['finished'] = time.time()
         write_json(folder / 'report.json', report)
     return report
