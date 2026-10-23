@@ -4,6 +4,7 @@ import contextlib
 import hashlib
 import json
 import os
+import re
 from pathlib import Path, PurePosixPath
 import signal
 import subprocess
@@ -16,11 +17,21 @@ class Blocked(RuntimeError):
     pass
 
 
+def redact(value):
+    if isinstance(value, dict):
+        return {k: ('[REDACTED]' if re.search(r'(?i)^(password|token|access_token|refresh_token|authorization|cookie|secret)$', str(k)) else redact(v)) for k, v in value.items()}
+    if isinstance(value, list):
+        return [redact(v) for v in value]
+    if isinstance(value, str):
+        return re.sub(r'(?i)(bearer\s+)[A-Za-z0-9._~+/-]+', r'\1[REDACTED]', value)
+    return value
+
+
 def write_json(path, data):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix('.tmp')
-    tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2))
+    tmp.write_text(json.dumps(redact(data), ensure_ascii=False, indent=2))
     tmp.replace(path)
 
 
@@ -73,7 +84,9 @@ def validate_project(p):
     # Repairs always exercise a disposable LOCAL app instance, never production.
     if u.scheme != 'http' or u.hostname not in {'localhost', '127.0.0.1'} or not u.port:
         raise Blocked('base_url debe ser http://127.0.0.1:PUERTO de una copia de prueba')
-    if not p.get('start') or not p.get('verify') or not p.get('journeys'):
+    if p.get('attach_readonly') and (p.get('permissions') != ['audit'] or p.get('environment') != 'test' or p.get('test_data') != 'synthetic'):
+        raise Blocked('Adjuntar sólo a una preview de ensayo con permiso audit y datos synthetic')
+    if (not p.get('start') and not p.get('attach_readonly')) or not p.get('verify') or not p.get('journeys'):
         raise Blocked('Configurar start, verify y recorridos con aserciones')
     if not all(any(s.get('action', '').startswith('expect_') for s in j.get('steps', [])) for j in p['journeys']):
         raise Blocked('Cada recorrido necesita un resultado esperado comprobable')
@@ -94,7 +107,7 @@ def app_server(project, workspace, output):
             raise Blocked('Puerto de pruebas ocupado; detener esa instancia o elegir otro puerto')
     if project.get('prepare'):
         code, log = command(project['prepare'], workspace, 600)
-        (output / 'prepare.log').write_text(log)
+        (output / 'prepare.log').write_text(redact(log))
         if code:
             raise Blocked('Falló la preparación del proyecto; ver prepare.log')
     with (output / 'server.log').open('w') as log:

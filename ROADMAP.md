@@ -74,3 +74,11 @@
 
 No declarar el módulo operativo globalmente hasta QA-03/04/05 con evidencia real. Hito versión 0.2: conectar un proyecto y verificar un ciclo con Ollama, sin merge/deploy automático.
 
+
+
+## Piloto MVA Cloud — 22/10/2026
+- [x] Reutilizar QUALITY y registrar aplicaciones audit-only.
+- [x] Preview privada: MVA Cloud → ARKITECTA → conectar → auditoría → evidencia.
+- [x] Primera auditoría AEROVIGÍA y salida completa con capturas/trazas.
+- [ ] Restablecer acceso QA (HTTP 401) y completar extracción/semaforo/circuito MR→RFQ→PO→Follow Up.
+- [ ] Aprobaciones por hallazgo, Ollama real y publicación HTTPS independiente.

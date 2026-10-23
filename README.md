@@ -81,3 +81,7 @@ Acceso desde Inicio → **Probar y reparar** (`/quality`). Conectar la URL del m
 ## Licencia
 Software propietario. Ver `LICENSE`.
 
+
+
+## Piloto privado MVA Cloud — 22/10/2026
+Conexión audit-only y primer recorrido AEROVIGÍA ejecutados. La fuente QA devuelve 401: no se declara integración pública ni circuito de compras completo. Ver [informe y evidencias](docs/reports/arkitekta-pilot-20261022/REPORT.md).

@@ -13,6 +13,7 @@ from urllib.parse import urlparse
 from .core import Blocked, write_json
 from .ollama import Ollama
 from .runner import run
+from .connector import connect, metadata
 
 
 def main():
@@ -37,6 +38,7 @@ def main():
     if not os.environ.get('QUALITY_TOKEN'):
         print('Token local de esta sesión: ' + token, flush=True)
     lock = threading.Lock()
+    connection_lock = threading.Lock()
 
     class Handler(BaseHTTPRequestHandler):
         def send(self, status, body, mime='application/json'):
@@ -67,9 +69,13 @@ def main():
             if not self.authorized():
                 return
             if path == '/api/projects':
-                return self.send(200, [{'id': p['id'], 'name': p['name'], 'base_url': p['base_url']} for p in projects])
+                return self.send(200, [metadata(p) for p in projects])
+            if path == '/api/connections':
+                target = data / 'connections.json'
+                return self.send(200, json.loads(target.read_text()) if target.exists() else {})
             if path == '/api/runs':
-                rows = [json.loads(p.read_text()) for p in sorted(data.glob('*/report.json'), reverse=True)[:100]]
+                rows = sorted([json.loads(p.read_text()) for p in data.glob('*/report.json')],
+                              key=lambda r: r.get('started', 0), reverse=True)[:100]
                 return self.send(200, rows)
             if path.startswith('/api/evidence/'):
                 rel = path.removeprefix('/api/evidence/')
@@ -86,18 +92,24 @@ def main():
                 return
             if self.headers.get('Origin') and urlparse(self.headers['Origin']).netloc != self.headers.get('Host'):
                 return self.send(403, {'error': 'Origen no permitido'})
-            if self.path != '/api/runs':
+            if self.path not in {'/api/runs', '/api/connections'}:
                 return self.send(404, {'error': 'No encontrado'})
             try:
                 size = int(self.headers.get('Content-Length', '0'))
                 if not 0 < size < 4096:
                     raise ValueError('Solicitud demasiado grande o vacía')
                 body = json.loads(self.rfile.read(size))
+                if self.path == '/api/connections':
+                    with connection_lock:
+                        result = connect(registry, body['project'], data / 'connections.json')
+                    return self.send(200, result)
                 project = registry[body['project']]
                 mode = body['mode']
                 if mode not in {'test', 'repair'}:
                     raise ValueError('Modo inválido')
-            except (ValueError, KeyError, TypeError) as e:
+                if mode == 'repair' and project.get('permissions') == ['audit']:
+                    raise ValueError('Aplicación conectada sólo para auditar; reparación no autorizada')
+            except (ValueError, KeyError, TypeError, Blocked) as e:
                 return self.send(400, {'error': str(e)})
             if not lock.acquire(blocking=False):
                 return self.send(409, {'error': 'Hay una ejecución activa; revisar progreso'})

@@ -1,0 +1,103 @@
+{
+  "projects": [
+    {
+      "id": "aerovigia",
+      "name": "AEROVIGÍA · QA de sólo lectura",
+      "repository": "https://github.com/martinveron2/AEROVIGIA",
+      "technology": "JavaScript / FastAPI / PostgreSQL",
+      "environment": "test",
+      "test_data": "synthetic",
+      "permissions": [
+        "audit"
+      ],
+      "attach_readonly": true,
+      "repo": "/projects/AEROVIGIA",
+      "base_url": "http://127.0.0.1:18252/",
+      "verify": [
+        "node",
+        "--check",
+        "public/app.js"
+      ],
+      "editable_files": [],
+      "journeys": [
+        {
+          "name": "Inicio y semáforo operativo",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/"
+            },
+            {
+              "action": "expect_visible",
+              "selector": ".av-home-next"
+            },
+            {
+              "action": "expect_visible",
+              "selector": ".av-priority.red"
+            },
+            {
+              "action": "expect_visible",
+              "selector": ".av-priority.yellow"
+            },
+            {
+              "action": "expect_visible",
+              "selector": ".av-priority.green"
+            }
+          ]
+        },
+        {
+          "name": "Consultas del día y totales",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/"
+            },
+            {
+              "action": "click",
+              "selector": "#av-ai-open"
+            },
+            {
+              "action": "expect_visible",
+              "selector": "#av-ai-dialog"
+            },
+            {
+              "action": "click",
+              "selector": "#av-ai-dialog button:has-text('Total disponible')"
+            },
+            {
+              "action": "click",
+              "selector": "#av-ai-dialog button:has-text('Del día')"
+            },
+            {
+              "action": "expect_visible",
+              "selector": "#av-ai-question"
+            }
+          ]
+        },
+        {
+          "name": "Lectura y revisión de correo ficticio",
+          "steps": [
+            {
+              "action": "goto",
+              "path": "/"
+            },
+            {
+              "action": "click",
+            "selector": "#side-nav > [data-task-stage='triage']",
+            "mobile_selector": ".bottom-nav [data-task-stage='triage']"
+            },
+            {
+              "action": "expect_visible",
+              "selector": "#av-mail-status"
+            },
+            {
+              "action": "expect_text",
+              "selector": "#av-mail-status",
+              "value": "Lector"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

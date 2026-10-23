@@ -48,3 +48,7 @@ Contrato: proyecto registrado → copia de prueba → recorridos responsive y ve
 
 Ejecución local o Docker Compose, con estado y evidencia portables en disco. Primera versión serializada; la cola distribuida, descubrimiento autónomo, carga masiva y adapter ORCHESTRUM son evoluciones pendientes, no capacidades operativas actuales. Detalles: `modules/quality/README.md`.
 
+
+
+## Conector audit-only — 22/10/2026
+connector.py expone metadatos del registro administrado por operador y persiste conexiones idempotentes por ID. HTTP no acepta rutas ni comandos nuevos. attach_readonly permite auditar una preview loopback existente con entorno test/datos synthetic/permisos audit; API y runner rechazan reparar y Playwright bloquea escrituras. La identidad entre checkout y target es declarada, no atestada; el informe lo explicita. MVA Cloud integra por enlace a /arkitekta/?project=ID; proxy local sólo para preview. Gateway productivo y autorización de despliegue permanecen separados.

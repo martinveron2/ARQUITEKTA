@@ -30,3 +30,7 @@ QUALITY Engine: implementación inicial en `modules/quality`, dashboard propio y
 - **No desplegado ni operativo en apps reales:** requiere configurar checkouts y recorridos; ningún cambio en Aerovigía/BUMY/otros servidores.
 - **Evidencia y siguiente paso:** `modules/quality/tests`, `.github/workflows/quality.yml`; comprobar CI ampliada de la rama y conectar un proyecto + Ollama. No hay URL pública nueva.
 
+
+
+## 2026-10-22 — Conector MVA Cloud y primer piloto
+Registro persistente audit-only, preview privada MVA Cloud → ARKITECTA y primera auditoría por API verificados. Suite 10 tests PASS. Piloto AEROVIGÍA: 12 combinaciones, FAIL; bloqueo HTTP 401 de la fuente QA, 7 candidatos visuales por revisar. Sin publicación, reparación ni inferencia Ollama real. Evidencia y pendientes: docs/reports/arkitekta-pilot-20261022/REPORT.md.
